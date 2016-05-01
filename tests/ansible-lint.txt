@@ -8,3 +8,5 @@
 Traceback (most recent call last):
   File "/Users/sorins/Documents/dev/jira/tests/tests.py", line 227, in __init__
     % (getpass.getuser(), self.project_b)
+
+% (getpass.getuser(), self.project_b)./jira/client.py:151:1: D203 1 blank line required before class docstring (found 0)

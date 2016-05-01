@@ -8,7 +8,7 @@ FORMAT = '%(levelname)s:	%(message)s'
 logging.basicConfig(format=FORMAT, level=logging.DEBUG)
 
 expressions = [
-    r""".*?['"]?([\.\/~]?[^:\s,'"]+)['"]?:?,?(?:\sline\s)?(\d+):?(?:,\scolumn\s)?(\d+)?.*?"""
+    r""".*?['"]?([\.\/~]?[^:\s,'"\(\)]+)['"]?:?,?(?:\sline\s)?(\d+):?(?:,\scolumn\s)?(\d+)?.*?"""
 ]
 
 matches = 0

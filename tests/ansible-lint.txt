@@ -1,0 +1,10 @@
+ [WARNING]: While constructing a mapping from /tasks/redhat/main.yml, line 26, column 3, found a duplicate dict key (when).  Using last defined
+
+[ANSIBLE0002] Trailing whitespace
+/Users/sorins/bmll/devops/roles.galaxy/Yannik.relaymail/tasks/relaymail.yml:3
+
+# Python Exception
+
+Traceback (most recent call last):
+  File "/Users/sorins/Documents/dev/jira/tests/tests.py", line 227, in __init__
+    % (getpass.getuser(), self.project_b)

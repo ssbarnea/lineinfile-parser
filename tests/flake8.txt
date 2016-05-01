@@ -1,1 +1,0 @@
-./jira/client.py:151:1: D203 1 blank line required before class docstring (found 0)

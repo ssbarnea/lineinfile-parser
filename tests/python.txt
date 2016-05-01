@@ -10,3 +10,6 @@ Traceback (most recent call last):
     % (getpass.getuser(), self.project_b)
 
 % (getpass.getuser(), self.project_b)./jira/client.py:151:1: D203 1 blank line required before class docstring (found 0)
+
+# Flake8 case
+./jira/client.py:222:123: D203 1 blank line required before class docstring (found 0)

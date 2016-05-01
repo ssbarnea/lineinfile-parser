@@ -3,15 +3,18 @@ import re
 import glob
 import json
 import logging
+import sys
 
 FORMAT = '%(levelname)s:	%(message)s'
 logging.basicConfig(format=FORMAT, level=logging.DEBUG)
 
 expressions = [
-    r""".*?['"]?([\.\/~]?[^:\s,'"\(\)]+)['"]?:?,?(?:\sline\s)?(\d+):?(?:,\scolumn\s)?(\d+)?.*?"""
+    r""".*?['"]?([\.\/~]?[^:\s,'"\(\)]{2,})['"]?:?,?(?:\sline\s)?(\d+):?(?:,\scolumn\s)?(\d+)?.*?"""
 ]
 
 matches = 0
+expected_matches = 0
+
 for f in glob.glob('tests/*.txt'):
     logging.debug("file: %s", f)
     for expr in expressions:
@@ -23,6 +26,8 @@ for f in glob.glob('tests/*.txt'):
                 # logging.error(item)
                 item.append('')
             j.append(tuple(item))
+
+        expected_matches += len(j)
         logging.info("expected=%s", j)
 
         pattern = re.compile(expr, re.UNICODE)
@@ -38,5 +43,8 @@ for f in glob.glob('tests/*.txt'):
         if j:
             logging.error("Failed to find all matches in %s\n\tmissing:%s\n\tresults: %s", f, j, results)
 
-
-logging.info("Success with %s matches!" % matches)
+if matches == expected_matches:
+    logging.info("Success with %s/%s matches!", matches, expected_matches)
+else:
+    logging.error("Failure due to only %s/%s matches!", matches, expected_matches)
+    sys.exit(1)

@@ -1,0 +1,4 @@
+Apr 24, 2016 7:15:00 AM hudson.ExtensionFinder$GuiceFinder$SezpozModule configure
+WARNING: Failed to load hudson.plugins.release.dashboard.RecentReleasesPortlet$DescriptorImpl
+java.lang.LinkageError: Failed to resolve class hudson.plugins.release.dashboard.RecentReleasesPortlet$DescriptorImpl
+        at hudson.ExtensionFinder$GuiceFinder$SezpozModule.resolve(ExtensionFinder.java:492)
